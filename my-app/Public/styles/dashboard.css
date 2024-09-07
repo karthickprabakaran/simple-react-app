@@ -1,0 +1,125 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+/* Video Section Styles */
+.video-section {
+    flex: 3;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.take-quiz-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.take-quiz-button:hover {
+    background-color: #0056b3;
+}
+
+/* Module Info Section Styles */
+.module-info {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.module-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.module-info .module-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.module-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.module-link:hover {
+    color: #0056b3;
+}
+
+/* Activity List Styles */
+.activity-list {
+    margin-top: 20px;
+}
+
+.activity-card {
+    background: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.activity-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.assignment-link,
+.activity-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.assignment-link:hover,
+.activity-card a:hover {
+    color: #0056b3;
+}

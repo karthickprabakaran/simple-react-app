@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Video/Quiz section -->
+                <section class="video-section">
+                    <% if (videoUrl) { %>
+                        <video controls width="100%">
+                            <source src="<%= videoUrl %>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <% } else if (showQuizButton) { %>
+                        <form action="/submit-test/<%= testId %>" method="POST">
+                            <button type="submit" class="take-quiz-button">Take the Test</button>
+                        </form>
+                    <% } %>
+                </section>
+
+                <!-- Right Sidebar -->
+                <section class="module-info">
+                    <h2><a href="/module/1" class="module-link"><%= module.module_name %></a></h2>
+                    <div class="module-description">
+                        <%= module.module_description %>
+                    </div>
+
+                    <div class="activity-list">
+                        <% module.activity_list.forEach(activity => { %>
+                            <% if (activity.type === 'assessment') { %>
+                                <div class="activity-card">
+                                    <h3>Assessment: <%= activity.data.test_name %></h3>
+                                    <p>Attempts Left: <%= activity.data.no_of_attempt %></p>
+                                    <a href="/assignment/<%= activity.data.test_id %>" class="assignment-link">Take Assignment</a>
+                                </div>
+                            <% } else if (activity.type === 'video') { %>
+                                <div class="activity-card">
+                                    <h3>Video: <%= activity.data.activity_name %></h3>
+                                    <a href="<%= activity.data.activity_url %>" target="_blank">Watch Video</a>
+                                </div>
+                            <% } %>
+                        <% }); %>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/scripts/dashboard.js"></script>
+</body>
+</html>
